@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change Password</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="css/bootstrap.css"/> 
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+
+
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="">Cake Shop Management</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li ><a href="orderList.action">Order Management</a></li>
+					<li ><a href="userList.action">Customer Management</a></li>
+					<li ><a href="goodList.action">Product Management</a></li>
+					<li ><a href="typeList.action">Type Management</a></li>
+					<li class="active"><a href="adminRe.action">Change Password</a></li>
+					<li><a href="logout.action">Quit</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<br><br>
+	
+	<form class="form-horizontal" action="adminReset.action" method="post">
+		<input type="hidden" name="admin.id" value="1">
+		<input type="hidden" name="admin.username" value="1">
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">User Name</label>
+			<div class="col-sm-5">1</div>
+		</div>
+		<div class="form-group">
+			<label for="input_pass" class="col-sm-1 control-label">Old Password</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="input_pass" name="admin.password" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_pass_new" class="col-sm-1 control-label">New Password</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="input_pass" name="admin.passwordNew" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-10">
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</form>
+	
+	<span style="color:red;"></span>
+	
+</div>	
+</body>
+</html>
