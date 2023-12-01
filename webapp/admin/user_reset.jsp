@@ -25,11 +25,13 @@
 			<div class="col-sm-5">${param.email }</div>
 		</div>
 		<div class="form-group">
-			<label for="input_name" class="col-sm-1 control-label">Password</label>
-			<div class="col-sm-6">
-				<input type="text" class="form-control" id="input_name" name="password" value="" required="required">
-			</div>
-		</div>
+    <label for="input_password" class="col-sm-1 control-label">Password</label>
+    <div class="col-sm-6">
+        <input type="password" class="form-control" id="input_password" name="password" required="required">
+        <button type="button" id="show_hide_password_btn">Show</button>
+    </div>
+</div>
+
 		<div class="form-group">
 			<div class="col-sm-offset-1 col-sm-10">
 				<button type="submit" class="btn btn-success">Submit</button>
@@ -41,4 +43,17 @@
 	
 </div>	
 </body>
+<script>
+document.getElementById('show_hide_password_btn').addEventListener('click', function (e) {
+    var passwordInput = document.getElementById('input_password');
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        this.textContent = 'Hide';
+    } else {
+        passwordInput.type = 'password';
+        this.textContent = 'Show';
+    }
+});
+</script>
+
 </html>
