@@ -34,59 +34,58 @@
                 <table class="table table-bordered table-hover">
 
                     <tr>
-                        <th width="10%">ID</th>
-                        <th width="10%">Total</th>
-                        <th width="20%">Amount</th>
-                        <th width="20%">Status</th>
-                        <th width="10%">Shipping Unit</th>
-                        <th width="10%">Information</th>
-                        
-                        
+                        <th width="5%" style="text-align: center;">ID</th>
+                        <th width="25%" style="text-align: center;">Product Details</th>
+                        <th width="5%" style="text-align: center;">Total</th>               
+                        <th width="5%" style="text-align: center;">Amount</th>
+                        <th width="15%" style="text-align: center;">Status</th>
+                        <th width="10%" style="text-align: center;">Shipping Unit</th>
+                        <th width="20%" style="text-align: center;">Delivery Information</th>
+
+
                     </tr>
 
                     <c:forEach items="${orderList }" var="order">
-    <tr>
-        <td><p>${order.id }</p></td>
-        <td><p>${order.total }</p></td>
-        <td><p>${order.amount }</p></td>
-        <td>
-            <p>
-                <c:if test="${order.status=='1' }"><span style="color:red;">Unpaid</span></c:if>
-                <c:if test="${order.status=='2' }"><span style="color:green;">Already paid</span></c:if>
-                <c:if test="${order.status=='3' }"><span style="color:blue;">Delivering</span></c:if>
-                <c:if test="${order.status=='4' }"><span style="color:black;">Completed</span></c:if>
-            </p>
-        </td>
-        <td>
-            <p>
-                <c:if test="${order.paytype=='1' }">Lion Ship</c:if>
-                <c:if test="${order.paytype=='2' }">Grab</c:if>
-                <c:if test="${order.paytype=='3' }">Shopee Food</c:if>
-                
-            </p>
-        </td>
-        <td>
-            <p>${order.name }</p>
-            <p>${order.phone }</p>
-            <p>${order.address }</p>
-        </td>
-    </tr>
-</c:forEach>
+                        <tr>
+                            <td><p style="text-align: center;">${order.id }</p></td>
+                            <td>
+                                <c:forEach items="${order.itemList }" var="item">
+                                    <p>${item.goodsName }(${item.price }) x ${item.amount}</p>
+                                </c:forEach>
+                            </td>
+                            <td><p style="text-align: center;">${order.total }</p></td>
+                                <td><p style="text-align: center;">${order.amount }</p></td>
+
+                            <td>
+                                <p style="text-align: center;">
+                                    <c:if test="${order.status=='1' }"><span style="color:red;">Unpaid</span></c:if>
+                                    <c:if test="${order.status=='2' }"><span style="color:green;">Already paid</span></c:if>
+                                    <c:if test="${order.status=='3' }"><span style="color:blue;">Delivering</span></c:if>
+                                    <c:if test="${order.status=='4' }"><span style="color:black;">Completed</span></c:if>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p style="text-align: center;">
+                                    <c:if test="${order.paytype=='1' }">Now Food</c:if>
+                                    <c:if test="${order.paytype=='2' }">Grab Food</c:if>
+                                    <c:if test="${order.paytype=='3' }">Shopee Food</c:if>
+
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>${order.name }</p>
+                                <p>${order.phone }</p>
+                                <p>${order.address }</p>
+                            </td>
+                        </tr>
+                    </c:forEach>
 
 
 
                 </table>
-
-
-
-
             </div>
         </div>
         <!--//cart-items-->	
-
-
-
-
         <jsp:include page="/footer.jsp"></jsp:include>
 
 
