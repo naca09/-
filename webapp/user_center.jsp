@@ -56,13 +56,13 @@
                         <hr>
                         <form action="${pageContext.request.contextPath }/user_changepwd" method="post"> 
                             <h4>Change Password</h4>
-                            <div class="input">
+                            <div class="register-bottom-grid input">
                                 <span>Old Password</span>
-                                <input type="text" name="password" placeholder="Please enter an old password"> 
+                                <input type="password" name="password" placeholder="Please enter an old password"> 
                             </div>
-                            <div class="input">
+                            <div class="register-bottom-grid input">
                                 <span>New Password</span>
-                                <input type="text" name="newPassword" placeholder="Please enter a new password"> 
+                                <input type="password" name="newPassword" placeholder="Please enter a new password"> 
                             </div>
                             <div class="clearfix"> </div>
                             <div class="register-but text-center">
