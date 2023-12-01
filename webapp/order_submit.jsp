@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>支付</title>
+        <title>Order Submit</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
@@ -53,7 +53,7 @@
                         <label>
                             <div class="thumbnail">
                                 <input type="radio" name="paytype" value="1" checked="checked" />
-                                <img src="images/banking.jpg" alt="微信支付">
+                                <img src="images/now.png" alt="now_food">
                             </div>
                         </label>
                     </div>
@@ -61,7 +61,7 @@
                         <label>
                             <div class="thumbnail">
                                 <input type="radio" name="paytype" value="2"  />
-                                <img src="images/momo.jpg" alt="支付宝支付">
+                                <img src="images/grab.png" alt="grab_food">
                             </div>
                         </label>
                     </div>
@@ -69,7 +69,7 @@
                         <label>
                             <div class="thumbnail">
                                 <input type="radio" name="paytype" value="3"  />
-                                <img src="images/offline_1.jpg" alt="货到付款">
+                                <img src="images/shopee.png" alt="shopee_food">
                             </div>
                         </label>
                     </div>
