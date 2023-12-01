@@ -46,10 +46,11 @@
                                 <span>Email<label style="color:red;">*</label></span>
                                 <input type="text" name="email" placeholder="please enter your email" required="required" onblur="check_mail(this.value)">
                             </div>
-                            <div class="input">
+                            <div class="register-bottom-grid input">
                                 <span>Password <label style="color:red;">*</label></span>
-                                <input type="text" name="password" placeholder="please enter your password" required="required"> 
+                                <input type="password" name="password" placeholder="please enter your password" required="required"> 
                             </div>
+
                             <div class="input">
                                 <span>Name of Customer<label></label></span>
                                 <input type="text" name="name" placeholder="please enter name of customer"> 
