@@ -97,11 +97,15 @@ public class OrderDao {
     }
 
 
-    public double getTotalSalesAmount() throws SQLException {
+   public double getTotalSalesAmount() throws SQLException {
         QueryRunner r = new QueryRunner(DBUtil.getDataSource());
         String sql = "SELECT SUM(total) FROM `order` WHERE status = 4"; // Giả sử 4 là trạng thái 'Hoàn thành'
         Double total = r.query(sql, new ScalarHandler<Double>());
-        return total != null ? total : 0.0;
+        if (total != null) {
+            return Double.parseDouble(String.format("%.2f", total));
+        } else {
+            return 0.0;
+        }
     }
 
 }
