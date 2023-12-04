@@ -50,11 +50,11 @@
                             <td><p style="text-align: center;">${order.id }</p></td>
                             <td>
                                 <c:forEach items="${order.itemList }" var="item">
-                                    <p>${item.goodsName }(${item.price }) x ${item.amount}</p>
+                                    <p style="text-align: center;">${item.goodsName }(${item.price }) x ${item.amount}</p>
                                 </c:forEach>
                             </td>
                             <td><p style="text-align: center;">${order.total }</p></td>
-                                <td><p style="text-align: center;">${order.amount }</p></td>
+                            <td><p style="text-align: center;">${order.amount }</p></td>
 
                             <td>
                                 <p style="text-align: center;">
@@ -72,7 +72,7 @@
 
                                     </p>
                                 </td>
-                                <td>
+                                <td style="text-align: center;">
                                     <p>${order.name }</p>
                                 <p>${order.phone }</p>
                                 <p>${order.address }</p>
