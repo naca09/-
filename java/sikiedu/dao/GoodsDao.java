@@ -146,4 +146,10 @@ public class GoodsDao {
         String sql = "delete from goods where id = ?";
         r.update(sql, id);
     }
+    public int getTotalGoodsCount() throws SQLException {
+        QueryRunner runner = new QueryRunner(DBUtil.getDataSource());
+        String sql = "SELECT COUNT(*) FROM goods";
+        Long count = runner.query(sql, new ScalarHandler<Long>());
+        return count != null ? count.intValue() : 0;
+    }
 }
