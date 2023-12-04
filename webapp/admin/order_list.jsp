@@ -9,6 +9,15 @@
         <link rel="stylesheet" href="css/bootstrap.css"/> 
     </head>
     <body>
+        <style>
+
+            .container-fluid {
+                padding: 30px; /* More padding around the content */
+            }
+
+
+
+        </style>
         <div class="container-fluid">
 
 
@@ -49,9 +58,9 @@
                             </c:forEach>
                         </td>
                         <td> 
-                            <p>${order.name }</p>
-                            <p>${order.phone }</p>
-                            <p>${order.address }</p>
+                            <p style="text-align: center;">${order.name }</p>
+                            <p style="text-align: center;">${order.phone }</p>
+                            <p style="text-align: center;">${order.address }</p>
                         </td>
                         <td>
                             <p style="text-align: center;">
