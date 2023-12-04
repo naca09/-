@@ -13,6 +13,8 @@ import com.sikiedu.model.Goods;
 import com.sikiedu.model.Order;
 import com.sikiedu.model.OrderItem;
 import com.sikiedu.utils.DBUtil;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class OrderDao {
 
@@ -80,4 +82,26 @@ public class OrderDao {
         String sql = "delete from orderitem where order_id=?";
         r.update(con, sql, id);
     }
+
+    public void updateProductStock(Connection con, int goodsId, int amount) throws SQLException {
+        QueryRunner r = new QueryRunner();
+        String sql = "update goods set stock = stock - ? where id = ?";
+        r.update(con, sql, amount, goodsId);
+    }
+
+    public int getTotalOrderListCount() throws SQLException {
+        QueryRunner r = new QueryRunner(DBUtil.getDataSource());
+        String sql = "SELECT COUNT(*) FROM order";
+        Long count = r.query(sql, new ScalarHandler<Long>());
+        return count.intValue();
+    }
+
+
+    public double getTotalSalesAmount() throws SQLException {
+        QueryRunner r = new QueryRunner(DBUtil.getDataSource());
+        String sql = "SELECT SUM(total) FROM `order` WHERE status = 4"; // Giả sử 4 là trạng thái 'Hoàn thành'
+        Double total = r.query(sql, new ScalarHandler<Double>());
+        return total != null ? total : 0.0;
+    }
+
 }
