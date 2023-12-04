@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="css/bootstrap.css"/> 
 </head>
 <body>
+<style>
+            .container-fluid {
+                padding: 30px; /* More padding around the content */
+            }
+        </style>
 <div class="container-fluid">
 
 	<jsp:include page="/admin/header.jsp"></jsp:include>
