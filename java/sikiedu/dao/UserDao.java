@@ -89,4 +89,11 @@ public class UserDao {
         String sql = "delete from user where id = ?";
         r.update(sql, id);
     }
+    public int getTotalUserCount() throws SQLException {
+        QueryRunner r = new QueryRunner(DBUtil.getDataSource());
+        String sql = "SELECT COUNT(*) FROM user";
+        Long count = r.query(sql, new ScalarHandler<Long>());
+        return count.intValue();
+    }
+
 }
