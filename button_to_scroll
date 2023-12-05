@@ -1,0 +1,74 @@
+<!<!-- buttonn to scroll Start -->
+        <button onclick="topFunction()" id="topBtn" class="scrollBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        <button onclick="bottomFunction()" id="bottomBtn" class="scrollBtn" title="Go to bottom"><i class="fa-solid fa-arrow-down"></i></button>
+        <style>
+
+        </style>
+        <script>
+            // Khi người dùng cuộn xuống 20px từ đầu tài liệu, hiển thị nút
+            window.onscroll = function () {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("topBtn").style.display = "block";
+                    document.getElementById("bottomBtn").style.display = "block";
+                } else {
+                    document.getElementById("topBtn").style.display = "none";
+                    document.getElementById("bottomBtn").style.display = "none";
+                }
+            }
+
+            // Khi người dùng nhấp vào nút, cuộn lên đầu tài liệu
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            // Khi người dùng nhấp vào nút, cuộn xuống cuối tài liệu
+            function bottomFunction() {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        </script>
+        <style>
+            .scrollBtn {
+                position: fixed; /* Fixed position relative to the viewport */
+                right: 10px; /* Distance from the right edge of the viewport */
+                z-index: 1000; /* Ensure the button is above other elements */
+                cursor: pointer; /* Change cursor on hover */
+                /* Additional styling for the buttons */
+            }
+
+            /* Position the 'Go to top' button */
+            #topBtn {
+                background-color: #FD9F3E;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                top: 50%; /* Align vertically at the center */
+                transform: translateY(-60px); /* Adjust position to avoid overlapping with the bottom button */
+            }
+
+            /* Position the 'Go to bottom' button */
+            #bottomBtn {
+                background-color: #FD9F3E;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                top: 50%; /* Align vertically at the center */
+                transform: translateY(0px); /* No adjustment needed */
+                border: none;
+                outline: none;
+            }
+
+        </style>
+        <script src="https://kit.fontawesome.com/4219c0e8dc.js" crossorigin="anonymous"></script>
+
+        <!<!-- buttonn to scroll End -->
