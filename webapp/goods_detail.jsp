@@ -26,11 +26,8 @@
         </script>
     </head>
     <body>
-
         <!<!-- header -->
         <jsp:include page="/header.jsp"></jsp:include>
-
-
             <!--//single-page-->
             <div class="single">
                 <div class="container">
@@ -54,7 +51,7 @@
                     <div class="col-md-4 single-grid simpleCart_shelfItem">		
                         <h3>${g.name }</h3>
                         <div class="tag">
-                            <p>Type List : <a href="goods.action?typeid=5">${g.type.name }</a></p>
+                            <p>Type List : <a href="${pageContext.request.contextPath}/goods_list?id=${g.type.id}">${g.type.name}</a></p>
                         </div>
                         <p>${g.intro }</p>
                         <div class="galry">
@@ -70,22 +67,17 @@
                     <div class="col-md-4 single-grid1">
                         <!-- <h2>Type</h2> -->
                         <ul>
-
-                            <li><a href="${pageContext.request.contextPath }/goods_list">All Cake</a></li>
+                            <li><a href="${pageContext.request.contextPath }/goods_list">All Series</a></li>
                                 <c:forEach items="${typeList }" var="t">
                                 <li><a href="${pageContext.request.contextPath }/goods_list?id=${t.id}">${t.name }</a></li>
                                 </c:forEach>
-
                         </ul>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
         </div>
-
-
         <!<!-- footer -->
         <jsp:include page="/footer.jsp"></jsp:include>
-
     </body>
 </html>
