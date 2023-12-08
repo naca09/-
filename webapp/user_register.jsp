@@ -14,12 +14,15 @@
         <script type="text/javascript" src="js/simpleCart.min.js"></script>
     </head>
     <script type="text/javascript">
-        function check_mail(e) {
-            if (!/(\S)+[@]{1}(\S)+[.]{1}(\w)+/.test(e))
-            {
+        function check_mail(email) {
+            var regex = /(\S)+[@]{1}(\S)+[.]{1}(\w)+/;
+            if (!regex.test(email)) {
                 alert("Please enter the correct format e-mail address！");
+                return false;
             }
+            return true;
         }
+
     </script>
     <body>
 
@@ -35,7 +38,7 @@
                     <c:if test="${!empty msg }">
                         <div class="alert alert-danger">${msg }</div>
                     </c:if>
-                    <form action="${pageContext.request.contextPath }/user_register" method="post"> 
+                    <form action="${pageContext.request.contextPath }/user_register" method="post" onsubmit="return check_mail(this.email.value)">
                         <div class="register-top-grid">
                             <h3>Register New Account</h3>
                             <div class="input">
@@ -77,7 +80,5 @@
         <!--//account-->
 
         <jsp:include page="/footer.jsp"></jsp:include>
-
-
     </body>
 </html>
